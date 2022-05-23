@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebApp</title>
+    <style>
+        *{
+        box-sizing: border-box;
+        }
+
+        body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        }
+        a{
+            text-decoration: none;
+
+        }
+        .container {
+            /* Center the content */
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            /* Take full size */
+            height: 100vh;
+            width: 100%;
+
+            /* Background */
+            background: url('/static/img/background.jpeg') center center / cover no-repeat;
+            color: white;
+        }
+        h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 3.7rem;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+        
+        h2 {
+        color: #333;
+        font-family: tahoma;
+        font-size: 3rem;
+        font-weight: 100;
+        line-height: 1.5;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        width: 550px;
+        margin: 3px;
+        padding: 0;
+        }
+
+        h2 span {
+        font-size: 40px;
+        margin-left: 40px;
+        color: aqua;
+        }
+
+        .message {
+        background-color: yellow;
+        color: #333;
+        display: block;
+        font-weight: 700;
+        overflow: hidden;
+        position: absolute;
+        padding-left: 0.5rem;
+        top: 0.2rem;
+        left: 270px;
+        animation: openclose 5s ease-in-out infinite;
+        }
+
+        .word1, .word2, .word3 {
+        font-family: tahoma;
+        }
+
+        .animate-charcter {
+        text-transform: uppercase;
+        background-image: linear-gradient(
+            -225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        /* text-fill-color: transparent; */
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 2s linear infinite;
+        display: inline-block;
+            font-size: 3.5rem;
+        }
+        /* button css */
+        .btn {
+        background: #eb5b5b;
+        background-image: -webkit-linear-gradient(top, #ffff, #ffff);
+        background-image: -moz-linear-gradient(top, #eb5b5b, #eb5b5b);
+        background-image: -ms-linear-gradient(top, #ffff, #ffff);
+        background-image: -o-linear-gradient(top, #ffff, #eb5b5b);
+        background-image: linear-gradient(to bottom, #eb5b5b, #ffff);
+        -webkit-border-radius: 28;
+        -moz-border-radius: 28;
+        border-radius: 11px;
+        font-family: Georgia;
+        color: #0d0807;
+        font-size: 28px;
+        padding: 10px 20px 10px 20px;
+
+        margin: 10px 0 0 50px;
+        text-decoration: none;
+        }
+
+        .btn:hover {
+        background: #eb4503;
+        background-image: -webkit-linear-gradient(top, #eb4503, #d93434);
+        background-image: -moz-linear-gradient(top, #eb4503, #d93434);
+        background-image: -ms-linear-gradient(top, #eb4503, #d93434);
+        background-image: -o-linear-gradient(top, #eb4503, #d93434);
+        background-image: linear-gradient(to bottom, #eb4503, #d93434);
+        text-decoration: none;
+        }
+
+
+        /* animation code */
+
+        @keyframes textclip {
+        to {
+            background-position: 200% center;
+        }
+        }
+        @keyframes openclose {
+        0% {
+            top: 0.2rem;
+            width: 0;
+        }
+        5% {
+            width: 0;
+        }
+        15% {
+            width: 230px;
+        }
+        30% {
+            top: 0.2rem;
+            width: 230px;
+        }
+        33% {
+            top: 0.2rem;
+            width: 0;
+        }
+        35% {
+            top: 0.2rem;
+            width: 0;
+        }
+        38% {
+            top: -4.5rem;
+            
+        }
+        48% {
+            top: -4.5rem;
+            width: 290px;
+        }
+        62% {
+            top: -4.5rem;
+            width: 290px;
+        }
+        66% {
+            top: -4.5rem;
+            width: 0;
+            text-indent: 0;
+        }
+        71% {
+            top: -9rem;
+            width: 0;
+            text-indent: 5px;
+        }
+        86% {
+            top: -9rem;
+            width: 485px;
+        }
+        95% {
+            top: -9rem;
+            width: 485px;
+        }
+        98% {
+            top: -9rem;
+            width: 0;
+            text-indent: 5px;
+        }
+        100% {
+            top: 0;
+            width: 0;
+            text-indent: 0;
+        }
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+
+    <div class="container">
+        <span>
+            <h1 class="animate-charcter"> Welcome In The World Of Face Recognition</h1>
+            <h2>
+            <span>always be</span>
+            <div class="message">
+                <div class="word1">Coding</div>
+                <div class="word2">Creating</div>
+                <div class="word3">Learning New Stuff</div>
+            </div>
+            </h2>
+            <a href="/home"> <button class="btn">  Explore Now </button> </a> 
+        </span>
+    </div>
+</body>
+</html>
